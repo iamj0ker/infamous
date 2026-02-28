@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Infamous Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --bg-primary: #0d1117; --bg-secondary: #161b22; --accent: #007BFF; --accent-glow: #00D4FF; 
+            --text-primary: #f0f6fc; --text-secondary: #c9d1d9; --border: #30363d; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        header { position: fixed; width: 100%; background: rgba(13,17,23,0.98); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid var(--border); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+        .logo { font-family: 'Orbitron', monospace; font-size: 1.5rem; font-weight: 700; color: var(--accent-glow); }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        nav a:hover { color: var(--accent-glow); }
+        .hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 5% 50px; }
+        .hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--accent-glow); }
+        .contact-section { max-width: 600px; margin: 0 auto; padding: 3rem 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        input, textarea, select { width: 100%; padding: 1rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-family: inherit; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent-glow); }
+        .submit-btn { background: linear-gradient(45deg, var(--accent), var(--accent-glow)); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,123,255,0.4); }
+        .direct-contact { background: var(--bg-secondary); padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; border: 1px solid var(--border); }
+        footer { text-align: center; padding: 2rem 5%; background: var(--bg-secondary); border-top: 1px solid var(--border); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Infamous Security</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="margin-top: 80px;">
+        <section class="hero">
+            <h1>Get In Touch</h1>
+            <p>Ready to secure your systems? Let's talk.</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="direct-contact">
+                <p><i class="fas fa-envelope" style="color: var(--accent-glow); margin-right: 0.5rem;"></i>
+                <a href="mailto:info@infamous.co.in" style="color: var(--accent-glow);">info@infamous.co.in</a>
+                </p>
+            </div>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Project Type</label>
+                    <select name="project_type" required>
+                        <option value="">Select...</option>
+                        <option value="web">Web Application</option>
+                        <option value="mobile">Mobile App</option>
+                        <option value="api">API</option>
+                        <option value="network">Network</option>
+                        <option value="cloud">Cloud</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Infamous Security | <a href="mailto:info@infamous.co.in" style="color: var(--accent-glow);">info@infamous.co.in</a></p>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+            e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        }));
+    </script>
+</body>
+</html>
